@@ -2,14 +2,14 @@
 //periksa apakah file ini tidak dipanggil secara langsung, jika dipanggil secara langsung
 //maka user akan di kembalikan ke login.thml
 if (!isset($_POST['username']) || !isset($_POST['password'])) {
-    header("Location: http://localhost/login.html");
+    echo '<meta http-equiv="refresh" content="0;url=http://localhost/login.html">';
     exit;
 }
 
 //melihat apakah form telah diisi semua atau tidak. Jika tidak, user akan dikembalikan ke
 //halaman login.html
 elseif (empty($_POST['username']) || empty($_POST['password'])) {
-    header("Location: http://localhost/login.html");
+    echo '<meta http-equiv="refresh" content="0;url=http://localhost/login.html">';
     exit;
 } else {
     //mengubah username dan password yang telah dimasukkan menjadi sebuah variabel dan meng-enkripsi password ke md5
